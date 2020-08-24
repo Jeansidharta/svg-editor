@@ -5,6 +5,8 @@ type Translation = {
 	y: number,
 }
 
+const MOUSE_RIGHT_CLICK_BUTTON = 2;
+
 export default function useTranslation (
 	eventListenerRef: React.RefObject<HTMLDivElement>,
 	cameraContainerRef: React.RefObject<HTMLDivElement>
@@ -52,6 +54,8 @@ export default function useTranslation (
 	}
 
 	function handleMouseDown (event: MouseEvent) {
+		if (event.button !== MOUSE_RIGHT_CLICK_BUTTON) return;
+
 		updateLastMousePosition(event);
 		isMouseDown.current = true;
 		document.addEventListener('mouseup', handleMouseUp);
