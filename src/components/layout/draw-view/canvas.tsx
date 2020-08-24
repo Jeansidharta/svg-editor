@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useCanvasViewBox } from '../../../contexts/canvas-view-box';
 
 const Root = styled.div`
 	width: 100px;
@@ -14,9 +15,13 @@ type CanvasProps = React.PropsWithoutRef<{
 type CanvasComponent = React.FunctionComponent<CanvasProps>;
 
 const Canvas: CanvasComponent = ({ }) => {
+	const { viewBox } = useCanvasViewBox();
+
+	const viewBoxString = `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`;
+
 	return (
 		<Root>
-			<svg viewBox='0 0 100 100'>
+			<svg viewBox={viewBoxString}>
 				<circle cx='50' cy='50' r='10' />
 			</svg>
 		</Root>
