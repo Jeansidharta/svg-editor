@@ -5,6 +5,7 @@ const Root = styled.div`
 	width: 100px;
 	height: 100px;
 	background-color: white;
+	cursor: crosshair;
 `;
 
 type CanvasProps = React.PropsWithoutRef<{
@@ -12,7 +13,7 @@ type CanvasProps = React.PropsWithoutRef<{
 
 type CanvasComponent = React.FunctionComponent<CanvasProps>;
 
-const Canvas: CanvasComponent = ({  }) => {
+const Canvas: CanvasComponent = ({ }) => {
 	return (
 		<Root>
 			<svg viewBox='0 0 100 100'>

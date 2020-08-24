@@ -6,6 +6,7 @@ import Head from 'next/head';
 import FilledThemeProvider from '../theme';
 import Providers from '../contexts';
 import AppContainer from '../containers';
+import PreventContextMenu from '../services/prevent-context-menu';
 
 type MyAppProps = React.PropsWithoutRef<{
 	Component: any,
@@ -37,6 +38,7 @@ const MyApp: MyAppComponent = ({ Component, pageProps }) => {
 			<FilledThemeProvider>
 				<Providers>
 					<AppContainer>
+						<PreventContextMenu />
 						<Component {...pageProps} />
 					</AppContainer>
 				</Providers>
