@@ -21,8 +21,8 @@ type ToolsContainerComponent = React.FunctionComponent<ToolsContainerProps>;
 const ToolsContainer: ToolsContainerComponent = ({  }) => {
 	return (
 		<Root>
-			<ToolIcon icon={<CircleImage />} />
-			<ToolIcon icon={<SquareImage />} />
+			<ToolIcon tool='circle' icon={<CircleImage />} />
+			<ToolIcon tool='square' icon={<SquareImage />} />
 		</Root>
 	);
 }
