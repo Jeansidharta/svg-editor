@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Canvas from './canvas';
 import useTranslation from './use-translation';
+import useZoom from './use-zoom';
 
 const Root = styled.div`
 	width: 100%;
@@ -10,9 +11,14 @@ const Root = styled.div`
 	overflow: hidden;
 `;
 
-const CameraTranslateContainer = styled.div``;
-const CameraRotateContainer = styled.div``;
-const CameraZoomContainer = styled.div``;
+const CameraItem = styled.div`
+	width: max-content;
+	height: max-content;
+`;
+
+const CameraTranslateContainer = styled(CameraItem)``;
+const CameraRotateContainer = styled(CameraItem)``;
+const CameraZoomContainer = styled(CameraItem)``;
 
 type DrawViewProps = React.PropsWithoutRef<{
 }>;
@@ -27,6 +33,7 @@ const DrawView: DrawViewComponent = ({  }) => {
 	const cameraZoomRef = React.useRef<HTMLDivElement>(null);
 
 	useTranslation(rootRef, cameraTranslateRef);
+	useZoom(rootRef, cameraZoomRef);
 
 	return (
 		<Root ref={rootRef}>
