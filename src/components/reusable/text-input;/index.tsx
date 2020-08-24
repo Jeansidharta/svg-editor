@@ -19,6 +19,7 @@ type TextInputProps = React.PropsWithoutRef<{
 	inputRef?: React.RefObject<HTMLInputElement>,
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
 	defaultValue?: string | number,
+	type?: string,
 }> & React.ComponentProps<'label'>;
 
 type TextInputComponent = React.FunctionComponent<TextInputProps>;
@@ -30,13 +31,14 @@ const TextInput: TextInputComponent = ({
 	inputRef,
 	onChange,
 	defaultValue,
+	type = 'text',
 	...props
 }) => {
 	return (
 		<Root {...props}>
 			{label}
 			{ numberOfLines === 1
-				? <Input ref={inputRef} onChange={onChange} defaultValue={defaultValue} />
+				? <Input type={type} ref={inputRef} onChange={onChange} defaultValue={defaultValue} />
 				: <TextArea />
 			}
 		</Root>
