@@ -54,11 +54,16 @@ const BaseImage = React.forwardRef<HTMLPictureElement, BaseImageProps>(({
 });
 
 const Images = {
-	/** Here's an image import example. Just copy and paste it with the correct import path. */
-	main: styled(BaseImage).attrs(({ alt }) => ({
-		src: require('../images/logo.svg'),
-		alt: alt || 'My Company Logo',
-	}))``,
+	icons: {
+		square: styled(BaseImage).attrs(({ alt }) => ({
+			src: require('../images/square.svg'),
+			alt: alt || 'Draw square tool',
+		}))``,
+		circle: styled(BaseImage).attrs(({ alt }) => ({
+			src: require('../images/circle.svg'),
+			alt: alt || 'Draw circle tool',
+		}))``,
+	},
 }
 
 export default Images;
