@@ -1,15 +1,10 @@
 import Head from 'next/head'
 import styled from 'styled-components';
+
 import TopBar from '../../components/layout/top-bar';
 import ToolsContainer from '../../components/layout/tools-container';
 import InfoDisplay from '../../components/layout/info-display';
-
-const Canvas = styled.div`
-	width: 100%;
-	height: 100%;
-	font-size: 32px;
-	overflow-y: auto;
-`;
+import DrawView from '../../components/layout/draw-view';
 
 const MainContainer = styled.div`
 	display: flex;
@@ -26,7 +21,7 @@ export default function Home() {
 			<TopBar />
 			<MainContainer>
 				<ToolsContainer />
-				<Canvas />
+				<DrawView />
 				<InfoDisplay />
 			</MainContainer>
 		</>
