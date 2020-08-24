@@ -18,7 +18,6 @@ const CameraItem = styled.div`
 `;
 
 const CameraTranslateContainer = styled(CameraItem)``;
-const CameraRotateContainer = styled(CameraItem)``;
 const CameraZoomContainer = styled(CameraItem)``;
 
 type DrawViewProps = React.PropsWithoutRef<{
@@ -30,7 +29,6 @@ const DrawView: DrawViewComponent = ({  }) => {
 	const rootRef = React.useRef<HTMLDivElement>(null);
 
 	const cameraTranslateRef = React.useRef<HTMLDivElement>(null);
-	const cameraRotateRef = React.useRef<HTMLDivElement>(null);
 	const cameraZoomRef = React.useRef<HTMLDivElement>(null);
 
 	useTranslation(rootRef, cameraTranslateRef);
@@ -39,11 +37,9 @@ const DrawView: DrawViewComponent = ({  }) => {
 	return (
 		<Root ref={rootRef}>
 			<CameraTranslateContainer ref={cameraTranslateRef}>
-				<CameraRotateContainer ref={cameraRotateRef}>
-					<CameraZoomContainer ref={cameraZoomRef}>
-						<Canvas />
-					</CameraZoomContainer>
-				</CameraRotateContainer>
+				<CameraZoomContainer ref={cameraZoomRef}>
+					<Canvas />
+				</CameraZoomContainer>
 			</CameraTranslateContainer>
 		</Root>
 	);
