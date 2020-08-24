@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import DisplayViewBox from './display-view-box';
 
 const Root = styled.div`
 	padding: 4px;
@@ -14,7 +15,7 @@ type InfoDisplayComponent = React.FunctionComponent<InfoDisplayProps>;
 const InfoDisplay: InfoDisplayComponent = ({  }) => {
 	return (
 		<Root>
-			Info
+			<DisplayViewBox />
 		</Root>
 	);
 }
