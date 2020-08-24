@@ -12,7 +12,7 @@ type CanvasProps = React.PropsWithoutRef<{
 
 type CanvasComponent = React.FunctionComponent<CanvasProps>;
 
-const Canvas: CanvasComponent = ({  }) => {
+const Canvas: CanvasComponent = ({ }) => {
 	return (
 		<Root>
 			<svg viewBox='0 0 100 100'>
