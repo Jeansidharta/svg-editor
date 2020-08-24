@@ -8,7 +8,7 @@ const Root = styled.li`
 const Anchor = styled.a`
 	color: black;
 	text-decoration: none;
-	font-size: ${props => props.theme.font.size.large};
+	font-size: ${props => props.theme.font.size.medium};
 	transition-duration: 200ms;
 	transition-property: background-color color;
 	outline: none;
@@ -23,21 +23,17 @@ const Anchor = styled.a`
 `;
 
 type NavLinkProps = React.PropsWithChildren<{
-	/** The ID of the document object to scroll to */
-	idToFocus: string,
 }> & React.ComponentProps<'li'>;
 
 type NavLinkComponent = React.FunctionComponent<NavLinkProps>;
 
 const NavLink: NavLinkComponent = ({
-	idToFocus,
 	children,
 	ref,
-	onClick,
 	...props
 }) => {
 	return (
-		<Root onClick={onClick} {...props}>
+		<Root {...props}>
 			<Anchor href={'#'}>
 				{children}
 			</Anchor>

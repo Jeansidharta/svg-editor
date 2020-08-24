@@ -141,7 +141,7 @@ const theme: DefaultTheme = {
 		gray: {
 			light: '#dddddd',
 			lighter: '#eeeeee',
-			main: EMPTY_COLOR,
+			main: '#aaaaaa',
 			dark: EMPTY_COLOR,
 			darker: EMPTY_COLOR,
 		},

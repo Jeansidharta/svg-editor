@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import styled from 'styled-components';
-import Navbar from '../../components/layout/navbar';
-import Footer from '../../components/layout/footer';
 
-const Main = styled.div`
+import TopBar from '../../components/layout/top-bar';
+import ToolsContainer from '../../components/layout/tools-container';
+import InfoDisplay from '../../components/layout/info-display';
+import DrawView from '../../components/layout/draw-view';
+
+const MainContainer = styled.div`
+	display: flex;
 	width: 100%;
 	height: 100%;
-	font-size: 32px;
-	overflow-y: auto;
 `;
 
 export default function Home() {
@@ -16,11 +18,12 @@ export default function Home() {
 			<Head>
 				<title>My Home Page Title</title>
 			</Head>
-			<Navbar />
-			<Main>
-				<h1>Hello!</h1>
-			</Main>
-			<Footer />
+			<TopBar />
+			<MainContainer>
+				<ToolsContainer />
+				<DrawView />
+				<InfoDisplay />
+			</MainContainer>
 		</>
 	)
 }
