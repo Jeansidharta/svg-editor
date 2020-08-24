@@ -9,6 +9,7 @@ const Root = styled.div`
 	height: 100%;
 	background-color: ${props => props.theme.colors.gray.main};
 	overflow: hidden;
+	cursor: move;
 `;
 
 const CameraItem = styled.div`

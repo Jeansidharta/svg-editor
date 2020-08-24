@@ -5,6 +5,7 @@ const Root = styled.div`
 	width: 100px;
 	height: 100px;
 	background-color: white;
+	cursor: crosshair;
 `;
 
 type CanvasProps = React.PropsWithoutRef<{
